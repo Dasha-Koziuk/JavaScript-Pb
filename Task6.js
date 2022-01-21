@@ -1,11 +1,14 @@
-var arr = [1,2,3,4];
-
-function arraySum(array) {
-    var sum = 0;
-    for (i = 0; i < arr.length; i++) {
-        sum += arr[i];
+function isEven(value) {
+    if (typeof value !== "number") {
+        throw new Error("parameter type is not a Number");
     }
-    return sum;
+    if (value % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-console.log(arraySum(arr));
+console.log (isEven(3));
+console.log (isEven(4));
+console.log (isEven('Content'));

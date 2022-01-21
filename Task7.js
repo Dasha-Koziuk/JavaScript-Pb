@@ -1,13 +1,19 @@
-var arr = [1,2,3,4];
-
-function arraySumPair(array) {
-    var sum = 0;
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 == 0) {
-            sum += arr[i];
+function getDivisors(value) {
+    if (typeof value !== "number") {
+        throw new Error("parameter type is not a Number");
+    }
+    if (value < 0) {
+        throw new Error("parameter should be in the range of 1 to 7");
+    }
+    var resArr = [];
+    for (let i = 1; i <= value; i++) {
+        if (value % i === 0) {
+            resArr.push(i);
         }
     }
-    return sum;
+    return resArr;
 }
 
-console.log(arraySumPair(arr));
+console.log(getDivisors(3));
+console.log(getDivisors(66));
+console.log(getDivisors(100));

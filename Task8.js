@@ -1,13 +1,10 @@
-var arr = [1, 2, 3, 4];
+var arr = [1, 2, 3];
 
-function arraySumPairMoreThan3(array) {
-    var sum = 0;
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 == 0 && arr[i] > 3) {
-            sum += arr[i];
-        }
+var recursive_function = function (array) {
+    if (array.length > 0) {
+        console.log(array[0]);
+        recursive_function(array.slice(2))
     }
-    return sum;
 }
 
-console.log(arraySumPairMoreThan3(arr));
+recursive_function(arr);
